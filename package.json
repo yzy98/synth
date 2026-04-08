@@ -1,0 +1,26 @@
+{
+  "name": "synth",
+  "private": "true",
+  "version": "0.1.0",
+  "packageManager": "pnpm@10.17.0",
+  "scripts": {
+    "build": "pnpm -r --filter './packages/*' build",
+    "dev": "pnpm --filter @synth/demo dev",
+    "check": "ultracite check",
+    "fix": "ultracite fix",
+    "typecheck": "pnpm -r --filter './packages/*' typecheck && pnpm --filter @synth/demo typecheck",
+    "prepare": "husky"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "2.4.10",
+    "husky": "^9.1.7",
+    "lint-staged": "^16.4.0",
+    "typescript": "^6.0.2",
+    "ultracite": "7.4.3"
+  },
+  "lint-staged": {
+    "*.{js,jsx,ts,tsx,json,jsonc,css,scss,md,mdx}": [
+      "pnpm fix --"
+    ]
+  }
+}

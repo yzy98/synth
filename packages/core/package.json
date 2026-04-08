@@ -1,0 +1,17 @@
+{
+  "name": "@synth/core",
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit"
+  },
+  "dependencies": {
+    "graphql-request": "^7.4.0",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "tsup": "catalog:"
+  }
+}

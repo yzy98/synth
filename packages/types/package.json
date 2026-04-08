@@ -1,0 +1,13 @@
+{
+  "name": "@synth/types",
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "build": "tsup",
+    "dev": "tsup --watch",
+    "typecheck": "tsc --noEmit"
+  },
+  "devDependencies": {
+    "tsup": "catalog:"
+  }
+}
