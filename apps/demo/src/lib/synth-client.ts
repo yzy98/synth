@@ -1,7 +1,7 @@
 import { createClient } from "@synth/core";
 
 const endpoint = new URL(
-  import.meta.env.VITE_SYNTH_GRAPHQL_URL,
+  import.meta.env.VITE_SYNTH_GRAPHQL_URL ?? "/graphql",
   window.location.origin
 ).toString(); // http://localhost:5173/graphql
 

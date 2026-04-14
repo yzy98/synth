@@ -50,7 +50,7 @@ export function App() {
       ) : (
         <div className="space-y-3">
           {data?.map((item) => (
-            <article className="p- 3 rounded border" key={item.id}>
+            <article className="rounded border p-3" key={item.id}>
               <div className="font-medium">id: {item.id}</div>
               <div>user: {item.user}</div>
               <div>status: {item.status ?? "-"}</div>
