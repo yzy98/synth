@@ -1,9 +1,9 @@
 /** biome-ignore-all lint/style/noNestedTernary: ignore */
-import { useQuery } from "@tanstack/react-query";
+
+import { useUserIntents } from "@synth/react";
 import { useMemo, useState } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
-import { synthClient } from "@/lib/synth-client";
 
 interface UserIntent {
   amount?: string;
@@ -21,14 +21,8 @@ export function App() {
 
   const normalizedUser = useMemo(() => user.trim(), [user]);
 
-  const { data, isLoading, isError, error } = useQuery({
-    queryKey: ["userIntents", normalizedUser],
-    queryFn: () =>
-      synthClient.query<UserIntent[]>("userIntents", {
-        user: normalizedUser,
-      }),
-    enabled: normalizedUser.length > 0,
-    staleTime: 10_000,
+  const { data, isLoading, isError, error } = useUserIntents<UserIntent[]>({
+    user: normalizedUser,
   });
 
   const handleClick = () => {
